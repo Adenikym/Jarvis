@@ -44,7 +44,14 @@ const routes = [
     path:'/payment-history',
     name:'payment-history',
     component: () => import(/* webpackChunkName: "paymenthistory" */ '../views/paymenthistory.vue')
-  }
+  },
+
+  {
+    path:'/student-profile',
+    name:'student-profile',
+    component: () => import(/* webpackChunkName: "studentprofile" */ '../views/studentprofile.vue')
+  },
+ 
 
 
 ]

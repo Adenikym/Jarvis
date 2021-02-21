@@ -36,8 +36,9 @@ export default {
   
   }, 
   methods:{
-    gotoProfile(){
+    gotoProfile(e){
       this.$router.push({path:'/body-profile'})
+      e.preventDefault()
     }
   }
 }

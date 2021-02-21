@@ -1,26 +1,25 @@
 <template>
     <div class="col-lg-12 px-0 d-flex">
-<sidenav class=col-lg-2></sidenav>
-
+<sidenav class="col-lg-2"></sidenav>
 <div class="main-content col-lg-10 px-0">
-    <greybar></greybar>
+<greybar></greybar>
 
-    <div class="heading d-flex col-lg-3">
-        <rectangle class="mt-2"></rectangle>
-        <h1 class="mt-3 ml-2">Pay History</h1>
-    </div>
-
-    <div class="pay-table">
-        
-    </div>
+<div class="heading d-flex col-lg-3">
+    <rectangle class="mt-2" ></rectangle>
+    <h1 class="mt-3 ml-2" >Student Profile</h1>
+</div>
 </div>
 
+
+
+</div>
     </div>
 </template>
 
 
+
 <script>
-const sidenav= () => import(/* webpackChunkName: "about" */ '../components/bodynav' );
+const sidenav=  () => import(/* webpackChunkName: "studentnav" */ '../components/sudentnav');
 const greybar= () => import(/* webpackChunkName: "bar" */ '../components/bar' );
 const rectangle= () => import(/* webpackChunkName: "rectangle" */ '../components/rectangle' )
 export default {
@@ -31,6 +30,7 @@ export default {
     }
 }
 </script>
+
 
 <style scoped>
 .heading h1{

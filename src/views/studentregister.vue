@@ -34,10 +34,15 @@ export default {
   
   }, 
   methods:{
-    gotoLoginPage(){
+    gotoLoginPage(e){
+
+     
         this.$router.push({
+          
             path:'/login'
         })
+
+         e.preventDefault(); 
     }
   }
 }
