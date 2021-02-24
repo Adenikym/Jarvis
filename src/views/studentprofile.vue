@@ -8,12 +8,14 @@
     <rectangle class="mt-2" ></rectangle>
     <h1 class="mt-3 ml-2" >Student Profile</h1>
 </div>
+
+
 </div>
 
 
 
 </div>
-    </div>
+
 </template>
 
 

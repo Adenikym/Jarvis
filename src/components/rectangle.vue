@@ -9,7 +9,7 @@
 
 <style scoped>
 .rectangle{
-  background: #E87312;
+  background: #f5f5f5;
 width:5px;
 height:50px;
 }

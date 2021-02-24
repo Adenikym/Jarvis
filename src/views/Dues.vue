@@ -1,25 +1,25 @@
 <template>
-    <div class="col-lg-12 px-0 d-flex">
+  <div class="col-lg-12 px-0 d-flex">
 <sidenav class=col-lg-2></sidenav>
-
 <div class="main-content col-lg-10 px-0">
-    <greybar></greybar>
-
-    <div class="heading d-flex col-lg-3">
+  <greybar></greybar>
+     <div class="heading d-flex col-lg-3 mt-2">
         <rectangle class="mt-2"></rectangle>
-        <h1 class="mt-3 ml-2">Pay History</h1>
+        <h1 class="mt-3 ml-2">Active Dues</h1>
     </div>
 
-    <div class="pay-table mt-4">
-        <table class="table table-borderless">
+    <div class="dues-table mt-4">
+
+   
+
+    <table class="table table-borderless ">
   <thead>
     <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Name</th>
-      <th scope="col">Matric Number</th>
-      <th scope="col">Department</th>
-       <th scope="col">Level</th>
+      <th scope="col">Date Created</th>
+      <th scope="col">Due Purpose</th>
+      <th scope="col">No. of payments made</th>
       <th scope="col">Amount</th>
+        <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -28,50 +28,34 @@
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
-      <td>Otto</td>
-      <td>@mdo</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
       <td>@fat</td>
-         <td>Thornton</td>
-      <td>@fat</td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>Larry</td>
       <td>the Bird</td>
       <td>@twitter</td>
-       <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-
-      <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-       <td>the Bird</td>
-      <td>@twitter</td>
     </tr>
   </tbody>
 </table>
-    </div>
-    <button class="download mt-3 col-lg-3 offset-lg-4 p-2 shadow">Download as Excel Sheet</button>
+ </div>
+
+ <button class="create col-lg-2 offset-lg-4 mt-4 p-2">Create a New Due</button>
 </div>
-
-    </div>
+  </div>
 </template>
-
 
 <script>
 const sidenav= () => import(/* webpackChunkName: "about" */ '../components/bodynav' );
 const greybar= () => import(/* webpackChunkName: "bar" */ '../components/bar' );
 const rectangle= () => import(/* webpackChunkName: "rectangle" */ '../components/rectangle' )
 export default {
-    components:{
+ components:{
         sidenav,
         greybar,
         rectangle
@@ -84,10 +68,9 @@ export default {
     color: #0E4870;
 font-size:1.9rem;
 }
-
-.download{
-    border:none;
-    background-color:#0E4870 ;
+.create{
+    background-color: #0E4870;
     color:white;
+    border:none;
 }
 </style>
