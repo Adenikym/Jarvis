@@ -55,5 +55,7 @@ font-size:1.9rem;
     background-color: #e5e5e5;
     color:black;
     height: 350px;
+    font-weight: bold;
+    border-radius: 15px;
 }
 </style>
