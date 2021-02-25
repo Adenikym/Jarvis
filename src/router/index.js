@@ -61,6 +61,12 @@ const routes = [
     path:'/create-due',
     name:'create-due',
     component: () => import(/* webpackChunkName: "createdue" */ '../views/createdue.vue')
+  },
+
+  {
+    path:'/initiate-pay',
+    name:'initate-pay',
+    component: () => import(/* webpackChunkName: "createdue" */ '../views/makepay.vue')
   }
 
 ]
