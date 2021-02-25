@@ -40,7 +40,8 @@ export default {
 
 <style scoped>
 .home{
-  background: #E87312;
+ background: #0E4870;
+
   height: 100vh;
 
 }

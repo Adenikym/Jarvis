@@ -45,7 +45,7 @@
 </table>
  </div>
 
- <button class="create col-lg-2 offset-lg-4 mt-4 p-2">Create a New Due</button>
+ <button @click="goToDueForm" class="create col-lg-2 offset-lg-4 mt-4 p-2">Create a New Due</button>
 </div>
   </div>
 </template>
@@ -59,6 +59,13 @@ export default {
         sidenav,
         greybar,
         rectangle
+    },
+    methods:{
+      goToDueForm(){
+        this.$router.push({
+         path: '/create-due'
+        })
+      }
     }
 }
 </script>

@@ -14,8 +14,10 @@
 <h2 class="text-center mb-2 mt-2">Log In</h2>
 
     <form @submit="gotoProfile" class="form-group mt-4">
-        <input  type="text" class="form-control " placeholder="Email-Address">
-        <input  type="text" class="form-control mt-4" placeholder="Password">
+        <input  type="email" class="form-control " placeholder="Email-Address" v-model="email">
+         <span class="text-danger" v-if="(!$v.email.required || !$v.email.email) && $v.email.$dirty">Email is required!</span>
+        <input  type="password" class="form-control mt-4" placeholder="Password" v-model="password">
+         <span class="text-danger" v-if="!$v.password.required && $v.password.$dirty">Please enter password</span>
         <input type="submit" value="Login to your account" class="form-control login-button mt-4">
     </form>
       
@@ -28,16 +30,43 @@
 
 <script>
 // @ is an alias to /src
-
+import { required, email } from 'vuelidate/lib/validators'
 
 export default {
   name: 'Home',
   components: {
   
   }, 
+
+  data(){
+    return{
+      email:'',
+      password:''
+    }
+  },
+  validations:{
+email:{
+  required,
+  email
+},
+password:{
+  required
+}
+
+  },
   methods:{
     gotoProfile(e){
+
+       this.$v.$touch();
+      if(this.$v.$invalid){
+        console.log(`error`)
+      }
+
+      else{
       this.$router.push({path:'/body-profile'})
+    
+    }
+
       e.preventDefault()
     }
   }
@@ -46,7 +75,8 @@ export default {
 
 <style scoped>
 .login{
-  background: #E87312;
+  background: #0E4870;
+
   height: 100vh;
 
 }
@@ -60,7 +90,7 @@ margin-top: 40px;
 
 .login-form{
     background-color: white;
-    height: 280px;
+  
   border-radius: 10px;
 }
 
