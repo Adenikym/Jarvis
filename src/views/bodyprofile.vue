@@ -25,7 +25,9 @@
   <p class="tel">09020213148</p>
 </div>
 </div>
-<div class="account col-lg-12">
+
+<editOption v-if="editing" class="col-lg-12 mt-4"></editOption>
+<div v-else class="account col-lg-12">
   <h2 class="ml-4 mt-4">Account Information</h2>
 <div class="more-details d-flex ml-4">
   <div class="account-details ml-4 mt-4">
@@ -46,8 +48,9 @@
     </div>
   </div>
 </div>
-</div>
 <button class="col-lg-2 offset-lg-5 edit px-0 mb-2">Edit</button>
+</div>
+
   </div>
 
   
@@ -57,12 +60,18 @@
 <script>
 // @ is an alias to /src
 const sidenav= () => import(/* webpackChunkName: "about" */ '../components/bodynav' )
+const editOption= () => import(/* webpackChunkName: "edit" */ '../components/editProfile' )
 
 export default {
   name: 'Home',
   components: {
-  sidenav
+  sidenav,
+  editOption
   }, 
+  data(){
+    return{editing:true}
+    
+  },
   methods:{
     
   }

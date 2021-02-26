@@ -2,21 +2,28 @@
   <div >
       <form v-if="detailsgotten" @submit="openTransaction" class="form-group initiate-form p-2" action="">
           <h2 class="text-center">Personal Information</h2>
-          <input type="text" class="form-control col-lg-10 offset-lg-1 mt-4" placeholder="Name">
-          <input type="email" class="form-control col-lg-10 offset-lg-1 mt-4" placeholder="Email">
-          <input type="tel" class="form-control col-lg-10 offset-lg-1 mt-4" placeholder="Phone Number">
-          <input type="number" class="form-control col-lg-10 offset-lg-1 mt-4" placeholder="Level">
-         
-         <input list="departments" name="department" id="department" placeholder="Department" class="form-control col-lg-10 offset-lg-1 mt-4">
+          <input type="text" class="form-control col-lg-10 offset-lg-1 mt-4" placeholder="Name" v-model="name">
+           <span class="text-danger" v-if="!$v.name.required && $v.name.$dirty">Full name is required!</span>
+          
+          <input type="email" class="form-control col-lg-10 offset-lg-1 mt-4" placeholder="Email" v-model="email">
+          <span class="text-danger" v-if="(!$v.email.required || !$v.email.email)  && $v.email.$dirty">Valid email is required!</span>
 
+          <input type="tel" class="form-control col-lg-10 offset-lg-1 mt-4" placeholder="Phone Number" v-model="phone">
+             <span class="text-danger" v-if="!$v.phone.required && $v.phone.$dirty">Please enter mobile number</span>
+
+          <input type="number" class="form-control col-lg-10 offset-lg-1 mt-4" placeholder="Level" v-model="level">
+           <span class="text-danger" v-if="!$v.level.required && $v.level.$dirty">Please indicate current level</span>
+         
+         <input list="departments" name="department" v-model="department" id="department" placeholder="Department" class="form-control col-lg-10 offset-lg-1 mt-4">
+  <span class="text-danger" v-if="!$v.department.required && $v.department.$dirty">Please select your department</span>
 <datalist id="departments">
   <option value="Department of visual arts"></option>
   <option value="Department of health sciences"></option>
  
 </datalist>
 
-         <input list="genders" name="gender" id="gender" placeholder="Gender" class="form-control col-lg-10 offset-lg-1 mt-4">
-
+         <input list="genders" name="gender" v-model="gender" id="gender" placeholder="Gender" class="form-control col-lg-10 offset-lg-1 mt-4">
+  <span class="text-danger" v-if="!$v.gender.required && $v.gender.$dirty">Please select your gender</span>
 <datalist id="genders">
   <option value="Male"></option>
   <option value="Female"></option>
@@ -25,49 +32,65 @@
           <input type="submit" value="continue to transaction" class="form-control col-lg-10 offset-lg-1 mt-4 continue">
       </form>
 
-      <form v-else action="" class="form-group transact-form p-2 ">
-          <h2 class="text-center mt-4 mb-2">Transaction Details </h2>
-          <p  class="text-center mt-4">Additional 4% charge is included for all transactions</p>
-         
-          <input list="bodies" name="body" id="body" placeholder="What body are you paying to?" class="form-control col-lg-10 offset-lg-1 mt-4">
-
-<datalist id="bodies">
-  <option value="UIMSA"></option>
-  <option value="FASSA"></option>
- 
-</datalist>
-
- <input list="sessions" name="session" id="session" placeholder="What session are you paying for?" class="form-control col-lg-10 offset-lg-1 mt-4">
-
-<datalist id="sessions">
-  <option value="1"></option>
-  <option value="2"></option>
- 
-</datalist>
-
- <input list="purposes" name="purpose" id="purpose" placeholder="Purpose" class="form-control col-lg-10 offset-lg-1 mt-4 mb-4">
-
-<datalist id="purposes">
-  <option value="for voting"></option>
-  <option value="for participation"></option>
- 
-</datalist>
-
-<input type="submit" value="continue to payment" class="form-control continue col-lg-10 offset-lg-1">
-      </form>
+      <transactForm v-else></transactForm>
   </div>
 </template>
 
 <script>
+import { required,email } from 'vuelidate/lib/validators'
+const transactForm= () => import(/* webpackChunkName: "transact" */ '../components/transact' );
 export default {
+  components:{
+    transactForm
+  },
 data(){
     return{
-    detailsgotten:true }
+    detailsgotten:true,
+    name:'',
+    email:'',
+    phone:'',
+    level:'',
+    department:'',
+    gender:'',
+   
+     }
 },
+validations:{
+name:{
+  required,
+ 
+},
+email:{
+  required,
+  email
+},
+phone:{
+  required
+},
+level:{
+  required
+},
+department:{
+  required
+},
+gender:{
+  required
+},
+
+
+},
+
 methods:{
 openTransaction(e){
-e.preventDefault();
+  
+ this.$v.$touch();
+      if(this.$v.$invalid){
+        console.log(`error`)
+      }else{
 this.detailsgotten=false
+
+      }
+e.preventDefault();
 
 }
 }
@@ -75,7 +98,7 @@ this.detailsgotten=false
 </script>
 
 <style>
-.initiate-form, .transact-form{
+.initiate-form{
 
     border:1px solid #e5e5e5;
 }
@@ -95,10 +118,5 @@ this.detailsgotten=false
     background-color: #0e4870;
 }
 
-.transact-form input{
-    height:45px;
-    border:1px solid #e5e5e5;
-    border-radius: 0;
-    
-}
+
 </style>
