@@ -13,10 +13,10 @@
 
 <div class="mobile-head d-md-none d-block  mt-2"><p class="ml-4 mt-2"> Student Body Profile</p></div>
 
-<div class="details d-flex mt-4">
+<div class="details d-sm-flex d-block mt-4">
 <div class="pic-logo col-lg-4">
 <div class="inner-box offset-lg-3">
-<div class="pic-circle rounded-circle offset-lg-2 mt-4"></div>
+<div class="pic-circle rounded-circle offset-lg-2 mt-4 offset-sm-2"></div>
 </div>
 </div>
 
@@ -40,17 +40,17 @@
 
      <div class="number d-flex mt-4">
       <p>Account Number</p>
-      <p>Not Filled</p>
+      <p class="ml-sm-2">Not Filled</p>
     </div>
   </div>
-  <div class="bank-details mt-4 offset-lg-4">
+  <div class="bank-details mt-4 offset-lg-4 offset-sm-4">
      <div class="bank d-flex">
       <p>Bank Name</p>
       <p class="ml-4">Not Filled</p>
     </div>
   </div>
 </div>
-<button class="col-lg-2 offset-lg-5 edit px-0 mb-2">Edit</button>
+<button class="col-lg-2 offset-lg-5 col-sm-4 offset-sm-4 edit px-0 mb-2">Edit</button>
 </div>
 
   </div>
@@ -74,7 +74,7 @@ export default {
   
   }, 
   data(){
-    return{editing:true}
+    return{editing:false}
     
   },
   methods:{
