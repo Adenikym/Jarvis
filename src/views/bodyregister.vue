@@ -2,11 +2,11 @@
   
   <div class="login col-lg-12 py-1" style="">
   
-    <div class="header d-flex col-lg-3 offset-lg-5 mb-3">
+    <div class="header d-flex col-lg-3 offset-lg-5  col-md-4 offset-md-4 mb-3 col-sm-5 offset-sm-4 col-8 offset-2 mb-3">
       <img src="../assets/credit-card.svg" width="40px" class="ml-2" alt="">
 <p class="mt-2 ml-2">JARVIS Pay</p>
     </div>
- <div class="register col-lg-4 offset-lg-4 py-1">
+ <div class="register col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2   py-1">
         <h2 class="text-center mt-3">Student Body Sign Up</h2>
 <form class="form-group" @submit="registerBody">
     <input type="text" class="form-control" placeholder="Student Body Name" v-model="bodyName">
@@ -14,7 +14,7 @@
     <input type="email" class="form-control" placeholder="Email Address" v-model="email">
      <span class="text-danger" v-if="(!$v.email.required || !$v.email.email)  && $v.email.$dirty">Valid email is required!</span>
     <input type="tel" class="form-control" placeholder="Phone Number" v-model="phone">
-     <input list="bodies" name="body" id="body" v-model="bodyType" placeholder="What category does this body fall under?" class="form-control col-lg-10 offset-lg-1 mt-4">
+     <input list="bodies" name="body" id="body" v-model="bodyType" placeholder="What category does this body fall under?" class="form-control ">
 <span class="text-danger" v-if="!$v.bodyType.required && $v.bodyType.$dirty">Body type is required!</span>
 <datalist id="bodies">
   <option value="student union"></option>
@@ -22,7 +22,7 @@
  
 </datalist>
 
-        <input list="abbrs" name="abbr" id="abbr" v-model="abbr" placeholder="What body are you paying to?" class="form-control col-lg-10 offset-lg-1 mt-4">
+        <input list="abbrs" name="abbr" id="abbr" v-model="abbr" placeholder="Official body name abbreviation?" class="form-control ">
 <span class="text-danger" v-if="!$v.abbr.required && $v.abbr.$dirty">Please select matching abbreviation.</span>
 <datalist id="abbrs">
   <option value="UIMSA"></option>
@@ -102,9 +102,8 @@ e.preventDefault();
 
 <style scoped>
 .login{
-  background: #E87312;
-  height: 100vh;
-
+  background: #0E4870;
+ 
 }
 
 
@@ -116,7 +115,7 @@ margin-top: 40px;
 
 .register{
       background-color: white;
-    height: 440px;
+   
   border-radius: 10px;
 }
 

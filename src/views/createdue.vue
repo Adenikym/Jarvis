@@ -85,7 +85,7 @@ this.$router.push({
 }
 </script>
 
-<style>
+<style scoped>
 .due-form{
     background-color: #0E4870;
     color:white;

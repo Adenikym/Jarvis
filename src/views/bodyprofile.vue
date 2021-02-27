@@ -1,15 +1,17 @@
 <template>
   
-  <div class="login col-lg-12  px-0 d-flex" style="">
-  <sidenav class="col-lg-2"></sidenav>
+  <div class="login col-lg-12  px-0 d-md-flex d-block" style="">
+    <mobilebar class="d-md-none d-block"></mobilebar>
+  <sidenav class="col-lg-2 d-md-block d-none"></sidenav>
   <div class="main-content col-lg-10 px-0">
-<div class="bar">
-</div>
+<div class="bar d-md-block d-none"></div>
 
-<div class="heading d-flex mt-2">
-<div class="rectangle ml-3"></div>
+<div class="heading d-md-flex d-none mt-2">
+<div class="rectangle ml-3 d-md-block d-none"></div>
   <h1 class="ml-2 mt-1">Student Body Profile</h1>
 </div>
+
+<div class="mobile-head d-md-none d-block  mt-2"><p class="ml-4 mt-2"> Student Body Profile</p></div>
 
 <div class="details d-flex mt-4">
 <div class="pic-logo col-lg-4">
@@ -58,15 +60,18 @@
 </template>
 
 <script>
+
 // @ is an alias to /src
 const sidenav= () => import(/* webpackChunkName: "about" */ '../components/bodynav' )
 const editOption= () => import(/* webpackChunkName: "edit" */ '../components/editProfile' )
-
+const mobilebar=() => import(/* webpackChunkName: "edit" */ '../components/mobilebar' )
 export default {
   name: 'Home',
   components: {
   sidenav,
-  editOption
+  editOption,
+  mobilebar
+  
   }, 
   data(){
     return{editing:true}
@@ -121,6 +126,13 @@ font-size:1.9rem;
   border:none;
   height:40px;
   border-radius:8px;
+}
+
+.mobile-head{
+   background: #407093;
+   color:white;
+   padding-top:1px;
+   padding-bottom: 1px;
 }
 </style>
 

@@ -2,12 +2,12 @@
   
   <div class="login col-lg-12 py-1" style="">
  
-    <div class="header d-flex col-lg-3 offset-lg-5 mb-3">
+    <div class="header d-flex col-lg-3 offset-lg-5  col-md-4 offset-md-4 mb-3 col-sm-5 offset-sm-4 col-8 offset-2 mb-3">
       <img src="../assets/credit-card.svg" width="40px" class="ml-2" alt="">
 <p class="mt-1 ml-1">JARVIS Pay</p>
     </div>
 
-    <div class="register col-lg-4 offset-lg-4 py-1">
+    <div class="register col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2  py-1">
         <h2 class="text-center mt-3">Student Sign Up</h2>
 <form class="form-group" @submit="gotoLoginPage">
     <input type="text" class="form-control" placeholder="First Name" v-model="firstName">
@@ -109,8 +109,8 @@ maxLength: maxLength(6),
 
 <style scoped>
 .login{
-  background: #E87312;
-  height: 100vh;
+  background: #0E4870;
+  
 
 }
 

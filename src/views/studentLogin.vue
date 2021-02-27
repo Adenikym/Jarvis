@@ -77,7 +77,7 @@ password:{
 .login{
   background: #0E4870;
 
-  height: 100vh;
+  
 
 }
 
