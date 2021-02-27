@@ -3,7 +3,7 @@
   <div class="select">
     <div class="header d-flex col-lg-3 offset-lg-5 col-md-4 offset-md-4 mb-3 col-sm-5 offset-sm-4 col-8 offset-2">
       <img src="../assets/credit-card.svg" width="40px" class="ml-3 ml-md-3 ml-lg-2" alt="">
-<p class="mt-2 ml-2">JARVIS Pay</p>
+<p class="mt-2 ml-2">JARVIZ Pay</p>
     </div>
 
     <div class="select-box col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-sm-8 offset-sm-2 py-1">
