@@ -1,12 +1,15 @@
 <template>
-  <div class="col-lg-12 px-0 d-flex">
-<sidenav class=col-lg-2></sidenav>
+  <div class="col-lg-12 px-0  d-md-flex d-block">
+       <mobilebar class="d-md-none d-block"></mobilebar>
+<sidenav class="col-lg-2 col-md-3 d-md-block d-none"></sidenav>
 <div class="main-content col-lg-10 px-0">
-  <greybar></greybar>
-     <div class="heading d-flex col-lg-3 mt-2">
+  <greybar class=" d-md-block d-none"></greybar>
+     <div class="heading d-md-flex d-none col-lg-3 mt-2">
         <rectangle class="mt-2"></rectangle>
         <h1 class="mt-3 ml-2">Create Due</h1>
     </div>
+
+    <div class="mobile-head d-md-none d-block col-12  mt-4"><p class="ml-4 mt-2">Create Due</p></div>
 
     <form @submit="createDue"  class="due-form col-lg-6 offset-lg-3 mt-4 p-2 ">
 <div class="form-group d-flex offset-lg-1 mt-4">
@@ -40,13 +43,15 @@
 const sidenav= () => import(/* webpackChunkName: "about" */ '../components/bodynav' );
 const greybar= () => import(/* webpackChunkName: "bar" */ '../components/bar' );
 const rectangle= () => import(/* webpackChunkName: "rectangle" */ '../components/rectangle' )
+const mobilebar=() => import(/* webpackChunkName: "edit" */ '../components/mobilebar' )
 import { required, numeric} from 'vuelidate/lib/validators'
 export default {
 
 components:{
         sidenav,
         greybar,
-        rectangle
+        rectangle,
+        mobilebar
     },
     data(){
         return{  duePurpose:'',
@@ -103,5 +108,12 @@ this.$router.push({
     border:none;
     font-size:1.4rem;
     font-weight:bold;
+}
+
+.mobile-head{
+   background: #407093;
+   color:white;
+   padding-top:1px;
+   padding-bottom: 1px;
 }
 </style>
