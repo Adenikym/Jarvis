@@ -1,8 +1,8 @@
 <template>
   <div class="col-lg-12 px-0 d-flex">
-<sidenav class=col-lg-2></sidenav>
+<sidenav class="col-lg-2 col-md-3 d-md-block d-none" > </sidenav>
 <div class="main-content col-lg-10 px-0">
-  <greybar></greybar>
+  <greybar class="d-md-block d-none"></greybar>
      <div class="heading d-flex col-lg-3 mt-2">
         <rectangle class="mt-2"></rectangle>
         <h1 class="mt-3 ml-2">Active Dues</h1>
