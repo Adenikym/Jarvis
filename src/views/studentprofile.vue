@@ -1,5 +1,6 @@
 <template>
     <div class="col-lg-12 px-0 d-md-flex d-block">
+        <mobilenav class="d-sm-none d-block"></mobilenav>
         <mobilebar class="d-md-none d-block"></mobilebar>
 <sidenav class="col-lg-2  col-md-3 d-md-block d-none"></sidenav>
 <div class="main-content col-lg-10 px-0">
@@ -40,12 +41,14 @@ const sidenav=  () => import(/* webpackChunkName: "studentnav" */ '../components
 const greybar= () => import(/* webpackChunkName: "bar" */ '../components/bar' );
 const rectangle= () => import(/* webpackChunkName: "rectangle" */ '../components/rectangle' )
 const mobilebar=() => import(/* webpackChunkName: "edit" */ '../components/mobilebar' )
+const mobilenav=() => import(/* webpackChunkName: "edit" */ '../components/mobilenav' )
 export default {
     components:{
         sidenav,
         greybar,
         rectangle,
-        mobilebar
+        mobilebar,
+        mobilenav
     }
 }
 </script>
