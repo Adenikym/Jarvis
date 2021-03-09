@@ -1,6 +1,7 @@
 <template>
   
-      <div class="wrap">
+      <div v-if="nav" class="wrap">
+          <img @click="closeNav" src="../assets/close.svg" class="mb-2 offset-10 mt-3" alt="" height="40px" width="40px">
         <div class="logo d-flex mt-4 col-lg-10 offset-lg-1 ">
  
 <img src="../assets/Logo.png" class="mt-2 ml-2">
@@ -16,7 +17,16 @@
 
 <script>
 export default {
-
+data(){
+    return{
+        nav:true,
+    }
+},
+methods:{
+closeNav(){
+this.nav=false;
+}
+}
 }
 </script>
 
@@ -25,7 +35,7 @@ export default {
     position:absolute;
     z-index: 1;
     top:0;
-     background: #0E4870;
+     background: #0E4870;;
     width:100%;
     height: 100vh;
     color:white;
