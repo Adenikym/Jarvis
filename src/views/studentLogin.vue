@@ -1,12 +1,12 @@
 <template>
   
-  <div class="login col-lg-12 py-1" style="">
+  <div class="login col-lg-12 py-1" style="height:100vh">
 
 
   
     <div class="header d-flex col-lg-3 offset-lg-5 mb-3">
-      <img src="../assets/credit-card.svg" width="40px" class="ml-2" alt="">
-<p class="mt-2 ml-2">JARVIS Pay</p>
+      <img src="../assets/logo-white.png" class="ml-2" alt="">
+
     </div>
 
 <div class="login-form col-lg-4 offset-lg-4 py-1">
