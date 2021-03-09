@@ -1,6 +1,11 @@
 <template>
-  
-      <div v-if="nav" class="wrap">
+  <div>
+       <div class="d-flex">
+   <img src="../assets/Logo.png" alt="">
+<img @click="openNav" class="offset-sm-5 offset-3 mt-3" src="../assets/menu.svg" width="30px" height="25px" alt="">
+  </div>
+
+  <div v-if="nav" class="wrap">
           <img @click="closeNav" src="../assets/close.svg" class="mb-2 offset-10 mt-3" alt="" height="40px" width="40px">
         <div class="logo d-flex mt-4 col-lg-10 offset-lg-1 ">
  
@@ -12,7 +17,8 @@
     <div @click="goToHistory"    class="d-flex col-lg-10 offset-lg-1 mt-4 text-center"> <img class="mt-2 ml-3" src="../assets/Chart.svg" alt="chart icon" width="35px" height="35px"> <li class="ml-3 mt-2">Pay history</li></div> 
 </ul>
     </div>
-  
+
+  </div>
 </template>
 
 <script>
@@ -25,12 +31,32 @@ data(){
 methods:{
 closeNav(){
 this.nav=false;
-}
+},
+goToHistory(){
+        this.$router.push({
+            path:'/payment-history'
+        })
+    },
+
+    goToProfile(){
+       this.$router.push({
+            path:'/student-profile'
+        }) 
+    },
+
+    initiatePay(){
+        this.$router.push({
+            path:'/initiate-pay'
+        })
+    },
+    openNav(){
+        this.nav=true
+    }
 }
 }
 </script>
 
-<style scoped>
+<style>
 .wrap{
     position:absolute;
     z-index: 1;

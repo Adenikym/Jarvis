@@ -1,5 +1,5 @@
 <template>
-    <div class="wrap px-0 py-1 ">
+    <div class="wrapper px-0 py-1 ">
         <div class="logo d-flex mt-4 col-lg-10 offset-lg-1 ">
  <img src="../assets/credit-card.svg" width="40px" class="ml-2" alt="">
 <p class="mt-2 ml-2">JARVIS Pay</p>
@@ -39,7 +39,7 @@ methods:{
 
 
 <style scoped>
-.wrap{
+.wrapper{
     background: #0E4870;
     height:100vh;
 }

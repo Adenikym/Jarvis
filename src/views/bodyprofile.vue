@@ -97,7 +97,7 @@
 // @ is an alias to /src
 const sidenav= () => import(/* webpackChunkName: "about" */ '../components/bodynav' )
 const editOption= () => import(/* webpackChunkName: "edit" */ '../components/editProfile' )
-const mobilebar=() => import(/* webpackChunkName: "edit" */ '../components/mobilebar' )
+const mobilebar=() => import(/* webpackChunkName: "edit" */ '../components/bodybar' )
 export default {
   name: 'Home',
   components: {
@@ -124,7 +124,7 @@ export default {
 }
 
 .rectangle{
-  background: #E87312;
+  background: #0E4870;
 width:5px;
 height:50px;
 }
@@ -155,7 +155,7 @@ font-size:1.9rem;
 
 .edit{
   color:white;
-  background:#E87312 ;
+  background:#0E4870 ;
   border:none;
   height:40px;
   border-radius:8px;
